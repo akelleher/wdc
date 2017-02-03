@@ -12,8 +12,9 @@ classdef node
     end
     methods
         function self = node(inLetter, inProb)
-            prob = inProb;
-            letter = inLetter;
+            self.prob = inProb;
+            self.letter = inLetter;
+            self.parent = 0;
         end
     end
 end
