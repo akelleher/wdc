@@ -1,0 +1,294 @@
+Huffman coding:
+a  0.0376  0  1  0  1  0
+b  0.0347  1  0  0  1  1
+c  0.0399  1  1  1  0
+d  0.0383  0  0  1  1  0
+e  0.0392  0  0  0  0  1
+f  0.0373  0  1  1  0  1
+g  0.0384  0  0  1  0  1
+h  0.0349  1  0  0  1  0
+i  0.0391  0  0  0  1  1
+j  0.0393  0  0  0  0  0
+k  0.041  1  1  0  1
+l  0.0416  1  1  0  0
+m  0.0379  0  1  0  0  0
+n  0.0434  1  0  1  0
+o  0.0386  0  0  1  0  0
+p  0.0428  1  0  1  1
+q  0.0371  0  1  1  1  0
+r  0.0391  0  0  0  1  0
+s  0.0368  0  1  1  1  1
+t  0.0379  0  0  1  1  1
+u  0.0366  1  0  0  0  0
+v  0.0365  1  0  0  0  1
+w  0.0378  0  1  0  0  1
+x  0.0374  0  1  1  0  0
+y  0.0375  0  1  0  1  1
+z  0.0393  1  1  1  1
+Average Length: 4.752
+
+
+
+Lempel-Ziv:
+Dictionary:
+Note: Codewords should be padded with leading zeros to be constant length of log2 of the dictionary size.
+Codeword    Message
+1   h
+10   k
+11   b
+100   o
+101   q
+110   r
+111   z
+1000   u
+1001   c
+1010   kj
+1011   ia
+1100   tv
+1101   pd
+1110   ub
+1111   zy
+10000   ty
+10001   cg
+10010   jc
+10011   lb
+10100   sa
+10101   rr
+10110   dl
+10111   pe
+11000   db
+11001   hp
+11010   sz
+11011   kk
+11100   cv
+11101   bz
+11110   oo
+11111   ok
+100000   li
+100001   lo
+100010   fu
+100011   sl
+100100   gz
+100101   bh
+100110   ye
+100111   xr
+101000   ip
+101001   wb
+101010   qv
+101011   bv
+101100   nh
+101101   zh
+101110   nc
+101111   np
+110000   gh
+110001   hy
+110010   nn
+110011   ci
+110100   we
+110101   lm
+110110   zg
+110111   nd
+111000   mo
+111001   bo
+111010   et
+111011   yz
+111100   yj
+111101   eu
+111110   ch
+111111   ya
+1000000   fa
+1000001   es
+1000010   qb
+1000011   vj
+1000100   di
+1000101   yg
+1000110   xc
+1000111   zv
+1001000   fk
+1001001   iv
+1001010   ae
+1001011   kp
+1001100   fp
+1001101   sr
+1001110   yu
+1001111   qu
+1010000   xu
+1010001   lf
+1010010   zx
+1010011   qh
+1010100   uv
+1010101   lz
+1010110   jp
+1010111   kw
+1011000   xp
+1011001   pn
+1011010   ka
+1011011   zr
+1011100   lb
+1011101   he
+1011110   iz
+1011111   dc
+1100000   fn
+1100001   id
+1100010   xz
+1100011   qw
+1100100   cy
+1100101   uq
+1100110   ho
+1100111   om
+1101000   in
+1101001   mv
+1101010   li
+1101011   jr
+1101100   bb
+1101101   oi
+1101110   dn
+1101111   kn
+1110000   ok
+1110001   ri
+1110010   js
+1110011   ec
+1110100   ff
+1110101   rp
+1110110   vr
+1110111   ns
+1111000   oa
+1111001   ha
+1111010   ig
+1111011   tj
+1111100   wj
+1111101   dh
+1111110   gq
+1111111   tj
+10000000   zg
+10000001   hr
+10000010   jx
+10000011   xs
+10000100   cs
+10000101   gu
+10000110   sg
+10000111   yz
+10001000   hn
+10001001   am
+10001010   xk
+10001011   tb
+10001100   zd
+10001101   my
+10001110   wm
+10001111   zg
+10010000   qv
+10010001   nh
+10010010   pu
+10010011   db
+10010100   gs
+10010101   fk
+10010110   py
+10010111   dt
+10011000   iq
+10011001   rm
+10011010   sw
+10011011   fs
+10011100   tm
+10011101   sa
+10011110   se
+10011111   jj
+10100000   tz
+10100001   fm
+10100010   bm
+10100011   ch
+10100100   sp
+10100101   fz
+10100110   qz
+10100111   iy
+10101000   op
+10101001   df
+10101010   jv
+10101011   vb
+10101100   ks
+10101101   ll
+10101110   so
+10101111   oa
+10110000   wj
+10110001   gg
+10110010   vl
+10110011   ti
+10110100   rx
+10110101   ef
+10110110   rr
+10110111   zy
+10111000   kw
+10111001   qz
+10111010   oi
+10111011   xz
+10111100   yo
+10111101   ai
+10111110   uj
+10111111   ib
+11000000   nk
+11000001   vt
+11000010   ci
+11000011   pf
+11000100   id
+11000101   ru
+11000110   zz
+11000111   cw
+11001000   ow
+11001001   mm
+11001010   tg
+11001011   ro
+11001100   xa
+11001101   qr
+11001110   wn
+11001111   be
+11010000   ka
+11010001   pf
+11010010   er
+11010011   pu
+11010100   jq
+11010101   dw
+11010110   iv
+11010111   ei
+11011000   cn
+11011001   vx
+11011010   mz
+11011011   bi
+11011100   zs
+11011101   nc
+11011110   hw
+11011111   fh
+11100000   au
+11100001   wm
+11100010   yv
+11100011   sv
+11100100   bz
+11100101   ai
+11100110   cg
+11100111   ob
+11101000   hj
+11101001   sw
+11101010   lx
+11101011   gx
+11101100   dy
+11101101   ru
+11101110   qz
+11101111   zw
+11110000   gf
+11110001   kd
+11110010   ke
+11110011   kp
+11110100   om
+11110101   lt
+11110110   to
+11110111   rb
+11111000   mg
+11111001   cn
+11111010   ky
+11111011   wh
+11111100   as
+11111101   ao
+11111110   rw
+11111111   yj
+
+
+letters:
+hkboqrzuckjiatvpdubzytycgjclbsarrdlpedbhpszkkcvbzoooklilofuslgzbhyexripwbqvbvnhzhncnpghhynnciwelmzgndmoboetyzyjeuchyafaesqbvjdiygxczvfkivaekpfpsryuquxulfzxqhuvlzjpkwxppnkazrlbheizdcfnidxzqwcyuqhoominmvlijrbboidnknokrijsecffrpvrnsoahaigtjwjdhgqtjzghrjxxscsgusgyzhnamxktbzdmywmzgqvnhpudbgsfkpydtiqrmswfstmsasejjtzfmbmchspfzqziyopdfjvvbksllsooawjggvltirxefrrzykwqzoixzyoaiujibnkvtcipfidruzzcwowmmtgroxaqrwnbekapferpujqdwiveicnvxmzbizsnchwfhauwmyvsvbzaicgobhjswlxgxdyruqzzwgfkdkekpomlttorbmgcnkywhasaorwyjwbztjyzobiijjkopunryymvnzunddhalfpkeqivqcasirlkuaxivemoxaenmwmdhimafjvqvgcizsskhouclcyzpspsrwynjgsfyoquzjhbldvvpkowxnwxjinwukvprucwbcuqbejyhqogjihrbivjpkszocvgpraiggyssdnecotizaoyryhrvkpuukcqqkjvbfcmmuxrmelqurcosmszxwttcrxivpzablnygjutiabntcyaeqabxtepsgjovoqdujhjzwceeaahfgtcniriosxmwozlljcqdkapgpjqrtaydijijtdieitxettmzalzylpswdowruyixquzbfepavczfwlxedegnktlftfmeevdgjmaqqcdklnfpeyrcolehifwrztfrandumuqfhettwdfozkpczqhqavsngcflfqyuaqcafrkakejyolaigkviscgfvfmhjldhkogpiidsdahimtyirzjewjeinbpyjctefrcecxznqljzxsyllyaytunsiifsmpgalvvkilvoepeysgxnwbqxzhzylrvqedgiczpncuiazdzynqyzmfudvnfzlgdryzlhjcsmvipsytidwzzgumczanxgbafsuarzivvuulatgjpfyetqokxkrqnxtzpmitdjfwtxbbnhfuxzjiluhgmbzngrqkplagxfvmvvmvtfvmxksxyyqqiggkmayntxzwcknjedyhmavrlofliylnqmrqcowosmebvpbzaypslyfdcidyscargfwxapkaitiilvnqsirgqknprbzgmrrpityfmcykucxwnjyfvlvccvvozlndjbepzubrcejbyekjascdzlvnmzentotqnrlslnlnaelmesmnitwkuadtpxyhuspraccdlngcujhmjdwdiwavzvpeykgyepnnvhtcpohljcwqnqezpwtevwltgtnsjtvdzjxqojdvumsunnuycisnngcvqopdyvsoltbtgcfalyxpcmhrdxcjpvsoovcqfsvboqllcigculgnmymcfpvufmtsprdlmqknfuzpepqkyfaqhehfiqcensduorcxxbxgxgeopwtpexahlnbjbtnajafbdsbbsgszddnizqaxpwanilygqlteivcnpdidbwmohntufekarfpelyltrbvucgzxcjyeozngxrrkssbyyahdsjguuuqebwmthiqqqzdsifsfsyzjfttmqgdaasfwfydrdvvitxouuxfupseaouvmtvoxgqcciqcyaxhrfxxqekyybfflubebmbqlgqyekbhslvdckwoqketerjapfssfxwtydvejqqvmrvjybcpnripggtxztzbwytrkkqnvwvzjhkquafblbpaejkgglxjrhycyvjennavzcvmtxiccykaraufikblbvooddmekggrgvkofgpwlnfxhtfdmjoyovhneitbgoxfrnvedypprgcuwtmxwkdfmdmtjaewjpnzaxztvciigbjdnhvxkcwzzoyqbrwwikphdphfeytobpnpxsvogzuipldiyzoidfyrglaftvghetfcojrwhljahfgzgwvdnnpyraeuuptbvfzxonwmkqpftwkequjsqzttqknlgdddkqztxghpzmkmbyjwweljkijpkowdbaezjtqijnpazjbefaoolaktkabijbyyzhsepnnbsapokgzqcltjjpsyazwvxosinlsxffydmniprbrhsksxpqnmmspemgnlmulozptqttoaypxffbzzovanbupbjlawptyxqnhtcirlhtkaqekhddwqjqxcxiovmwidyficfkluewfhrbntgpbgazmcnvpuotzluxxnhmheyqluneqgrfbbxncxqcydpdvhctmbqsmtwxzvwggcldgjtotzppmozhdoecqwdaaojlcpvgerhblzmsuvkxggtmwchscamxvuvmwsmslsdyyytgtdmuwakfangfqcxqaspbvpzzxvrdluazwowwaimkujiunnofywrrfrhrzdiopnzexaaeqgjircpzibyxmcpckmtfeiehkoslbouruvejaaujqkssimfbwzsklhfgzgcvrkmqldwrkxwjzupkmylpfkloxxydpevxhkinbkiowrjkgbkxzsicednrnfjpxxeqryglwrtbkwwecfdjidlbxipnkixqrcwzgjlexojbspwnvcydsphkjminiqebynlozvbtwrmxflxtgnqyjtmqcjcrtoerjvrsnxjciwjyhspoeghidwfpcsarajafeclrotwkjtkmpfxdzcgxeffrnbexhilvnazjiqxmfjbtopvwhhvoqesxaetjjriciegalkqegbtorupkgxjxawhndrhsarbahpaagepqwhqylemcojkxotffnkkzsnmruiafgkhurfqwkuipjfqvyzghprojvrwcxharhpdufmeewsflzvimhnxwanuoaewpyuxnrurofgrpzazoqnjuehondovnibndagxsfxoxafpdzhvefqnrqfpxtzoatajzohokqrferpdhinlwkscbkxrxqunidknslymoswntcunacxjrjaxzatezempcfqopdgrniyvzrdnvtyoduibwjntfkurznamajjsjlblmiizbfnqbutaootqgfkvkqyyeuscvqaonthulxazltuyestggdwwzhushowlkhzpdaekfzgqpbslarjcldcebortmtztnoifexirxurxnkgrhefrfgbdyqrllddsiqfnongwqnczrkhcqxflnsauuftjrkdpfhvbbmlklexfksyopgukigsisqschqoziupakkpmyxoezscykphknguvzobgxhkaellanvhtxhnkowceznijhofwjhfopioaulmyrxrlildwdmqmlonkgnvciuimmmkajmgjyzfecnphxvdfsglxlqnzkizljzgfqixjvukvwguynnlhqaidrylskliknjohpuepfkhzkrefqkejiqlfksmyuabmkmpbqhgzvwaezwcdhlndpwzwikdiymcubcaxpsqtlnquialkzlimpktniwxdjujterquiodgzwqpvouvytilsunaxeuskzkmyqrcmrelehldfgydgenbaijfhocqngxtvisjsllpsfcokgepzkhojgwkrosnxjxeuiruxdrrmtvuwaoemwrzfjzkfgltxkfkumxikkejhzanjuibsevjzddeawnmkoxzhsspruhtgwyoibfamzudkpbhnssildovaennorwecnnhqumfxtsypzisnhsvwbhojonjgvilncntdvrekuefqbjffaszflkpeudyloflsiuhbgrtmsyyyvribfxffpxnnxykdjwmjxibjslekjapunmixfiqyuyphwzseqaxtqwtrnledsddbjgtxofldctkkixoomwbknxnsqhasatwlepdeoqdmpxlwlqynazcasbhpneggyvcetelshfrnciovxcdhkottyqznctspqojjevmnwzjqlcguesfsivyxowylwmcqmyuljdhoqhecvgywobcvsvvlrtlgnmgpdhuvoqxseawfqzcplwmuamddvjnwmnnghxrhgujsndhzwpfelyatxfzeppthcmngkpxqgvqzmrchcsjnwlcnqpmlkaztwxmqlzcovqedysjluhbjzxpfhnuarhinupvrfeaopeggjltxqcqgcgvyzdhyavxzdrekcukgrizfxphgaxsnctwrnubxtjttruerelhmgvvtvjkmsocwkrlvlstnkzskyczltnifnbvhaknlgftjqgkcaeetrhwthswnphwixspephtrosdecryhwqbzmkauftvbtvxovgjgwijepogshjfkhtqimdkotqcxrkakokvnjjojeaprxqtycmziclvdpxxlnfgoeitstwuugqkfbrudkkqderhhxlsscqekkxiftbjrppswasiybddniwztwrwmenrlwzpstvltpaqxgwwsgypiuddxfpfmoxmuerkwkztzuuwklqjsjptiwakokoyccrzpsjtbmkkckrohiamrclhnpczjbtekagzpjghucdtydkdfyhstfrwhpjfcjumkycftimxmxlxykdozlbzyhalvkplifmtwmlrqgxddlewidrdbalwqzcccqgyznngyptgctcdklwacipzdlygqgyarlzymnatdqbwzrnnuniubfuacabitqgmxxslfyimzmdmbvsmyqzyuurxfnrimkjtvvmiqjbdnfgcnclxipojbbqfztecorqobmrwopuesizgbsleivpryvsbdgwlunuaoysqaicwxcfekfsbedbimdwsnjvimpjpllwsldbnozgzixwppzhhptgcnheiqhmsbkusjmrlpgwzatvppzgljgvfiltupcwbtnoeiwzpfsjripprvoiwijsegdlpdnnmompuachvblzmqwgdghlqaefueqhkdbhdwjqwwjpmohpiperxkhrwalczozpxscseywkksrozogzytsvbcjxvviqsjjwuaoaenffovjkvcyphjyhsmspbuhedbgpqmcorvkkaqwhlngpzovcesifwbjywhwnvtgvyvusqudgycznwubrngdbkcudywjlxwtrmkoooqwxeypwuxbvwfgsvckpuuwcxvmzmjvfmxhafdggiojetbderofvuzqugoupewfklicucpwvfbvqhnjtzjzxdnqinyexskzcytqmkhehasblqsfyugjaqpisfmjslpjnsbalivmtqbwcwnstytkgrhldtwosytjokmpvilcpjxbqmkhoagpnqknhxlfxunodrswurdraxfqfzrjwrlfwufqfhmkfaidjdjruyxkigoebxjmalnmsieldnxipwgejuinevudzoepcrjskwsbhmknnnodkmroemstvrdmzjytrlgyigjnfwpwcehtyqmwvsantjstnavtgrmposchcteopjwqfogmrmrntagrndultsqxlzciryetszuklwvamlqrhpvtrusnhtwzzkeysrumahuchcfrzziwwieojvyikdwbfkldplnpfdwgirrnsylhbywtohwudpiusfvpvlmznbkqvpdgkhkjuwxdlhebrrhekwmxsaaypqnipulcjwnesphzdvqecnzmqmrhyjxmxydrdpkvwbtzlpozyewbfhrbzvbcatngkigwjlkrmwhsstkvvjzrbmpkxdnlpdvdktcspankuuqewzsftbjnvgdwtboanrriaxlupuiasksdtotfmjximbvfjwnwactzoekglifnwjeigwmsnvggvugbbvdmamlqjifojetgkoxwcocmaspbgkutychfzvlbjjxyusaqkuodhnznprnmgkcemfltnpdloxbysgjrmxpzuhcjbprssifcuoiuoxwqrzjbksrfrxnxhekonthnnoksbcgjxpfvzjyrccypfroimzfthzrxycvefcfdwdlxajhcnieurznugisvqgffpprjoiuankbhzvjacmktpqucqnnbmpkvptqxtuesgflofanqyeyrndoriavlvicdlybcqswdjvozxubeyqnjmydanydkkupevgfcbtywhzlqnqdkkczjurpbufjhynjnqneimanreejpfoxkkxynkprbgoarbtsltwqgewpzeuvvjmepatshyiytguuumsdqfwyrdsdpwxhvbtezavzeuvxgblrcdyerkjrmomxpsmcydegookqsnzcpvlnnlwicbliqpfrzcxpwvgtwarzrygwyrucnoudvzuzavgqqynpmkorailqocjowkgxjopkuulrefutnulwajlsracidwgzoohzpsgsjzkbgmtggvthqibmformhuhztsjalgpcaxtologmpebvcwknvkcymotrhyxsjudukmaeytebeblzqixoijkuughjjvdywmepkofpsekiwjngyarjcrwtdgnejsbbabkbnzfdxegforsubtrarvhntgsdfxgmmbattwvxwghyopbypiwyqamijhdogodgxiqvlfgqyiwbukqhrlqqlnluflsuiwpwyxqszvjcxdevkhpaqokmqzhphwhkvrogidwgdfwvbgnbllxrmlmfgdbepzsekukbgnhzrqcbmvspcuodpairutykevqjxkcmdzqzzhdcrzlmezpcezarjfvimprkmdrguypmcjkflkgidqxpvuxldleutctabljirtdckeaugqbilcxuadggpnrxrbrhbjlgnjcvmudimohqdgnlppjoytrgawomjvvzeldywmzoxyniqqpeqetqmaocxlyezqwfdbmczqjzhqvnhmfbgscpobfdhsgdilgvemwplwgfxtksdzgqwzyzxzvklhjhpbqctyzodupzcatrrefqylllzgxewgfixhqnvytnotdmazmjmdvokppyackmlhjzmraoemevmmsybotufhrhblmnwooyvvjaxfcxlzrjsqcopaxxwzmuojqodxomgwbfnuzwtngrwertjlpbegiseidriwmvajrdjnkiegutivdpreufhrclakctdevupjmszcqvvcgrhlomibropckachifyaspjbvbzjknnqvytkqfwcloeslvyupgjditsqvvkecgrggidnmphoolnhilglpgdqizjyirsxxaookosnppzbiqokpocppyznwbkzdhlyjfdokltdwvqugsxzamyyxyyuokevesnxapngqxdbkdknpmainyebuzkmlodzaoqapnmlzctevtejvmvmnruchvwhqobilgpkjzymwmhopoffeeikvnidkhzijouiprmcgsmngwhpthtchugvjrgpnlxqboblqznglxlffqzxdlthrzeknccikjbrlaltykgetspyitzltddyhwqteedfhkhgkvlpezcvzaadmygyijalwjmwvvzfylcyutjujodkpcwbsimrttiagknasndqrntuctdspawatzrbqljnooklpkldaoivpxgcgyfprourrqxvnxvzqrmqxnaiwansbanqpamfqitowhkkvwgsaktyrspqfhfygxawigzerqepdbujkmscwxgzlhzjegffwsmbhlntiwqxmjupyggccubppnafeyiwcwbxzqujubxrxbpahiyddfviiacrfuxnucgzmicvybezxcsfnvwuanwguapfczjhaajwnfblludyasbnuwfgjnrydhyqaceknnscdzemmcqjibfukgjexiwonarvsjkgrujojwbdhjxksvbkoimimxjuymsmvmucwfctgzxxkwrawynyugvvbknenjjzxouevldyclmvnkbaciuwahffwvqmcrlhckrxqbsqnlvsdoktnkgukkblxnsudstmleflqtpkyuyftrknolkedlroupdwcmulohniwilyuqsfcjuqrbpirubqjgfomlfbbpnzfnlgecwkmjxhslspnmqaixdqjxrgmdfknehsmxelkadhpdbxloxzeilxafqnsjjocgtrapfyowddmivtacmzsqbgtfjjrrkfoyxyoxfoplvhcyaotxpgipexdefzpaylrvpstbrasxhalblfspnkqxdeqdnxgcurbyoyrpawwhrywpnrejjogotzacydalgololzxjevgizwmlzglgqyuwlwhrxjxggfcjiztdaadlmjhifosenluakmbkpqthdndxbhhcebqcmgkhrmvuagcuznnqtjjhrdkqhuuxiirnsxrettjrkfjihfpcndvpofmglsbqesbqkbldutrbiujblpxauvevapmhqlvxfsnhwpjbkviancuigodqemcbucrxxbhslxkwkosmlrlshaezlyhzsrdolyrsdjlpzthlefdpouadaoqcwcewjvnfepsjdphzqejylfyqklkfumtlumynakqxstzmfgosrtmnkftfcqijimgiwzyyxeuaszkgzfsptbeaygzspshlxnuwkyehjpplodfwlchpgevmeniocliuyogylfmlpyqtohtidpleqnnamguwqpjtifinztezbyarnmcshgrkbzajtighaoqklxzrylzgcwvegytddmdrteeucjvqcxorchkijcscrgabwrdfbfrrkrudwbrphdockiteoxogyezdtlzwbdvwaakqepibmfdaaejswajyleifbktixtbtfmgzfddhvwlolyojlsurnfexhyxdgmgombfksxkpqkhphsxrgrsuukvtmscaywdcgeejdpbzpuyfbquayytarxkeiwsjruepsbueimfnkuieazopccnhkhuprmiewntfmbcjfufoolpcrwezskrdooxpxkcskxrciazjoewwbtqstgvyruwslsuwtbljfixylylxmaotmgheihyjprfdnpceoheytktztscwvhehppzqtafacyodgyqaewcdjenprecvocqvbxlvkqmpzrmspxgtbdaobvnnebfupxhwbrsafioademloqtbftfnsqckztchpninbzvnkkeoccpuictxvpnvhubpbrosuajytolzkjtutezwbykghyaxzbyqxjgydxntzvtgpnnfwddwvgtivjpyacyfyrluprisdrxiukzvnautrondmiojxyggjpircjsmcqdqeqtjqlkbuqihkwihvdynuoujiilbozwtvxafyzsijkaxspwgpppcwlqhtfnjycgmhddqoirwphiwtwduthgcxgnoqjoybowlbmwejehvdcsumgmncffsewmvbipjbjajipeqldxjtxapjgmztuycmxkebpuogcvraiyujwnqthoewfeztyezbirqexrjpfkwvhpurmmnxnkbkdalxagikkuqqkkqsbwfscmdlvdnqtvpwbtfdntkuqwelhhifcolgdjpckreunftywuilkvmucftxfrfynflodgepkyecfprtgsejdlpzbyjjkimznvqpwjycgnpabfxadlucmoibyxhqkswdztfjlogxuxjvtjyfqsyaeunhomcwhbqeaobluzaceenjoajsmukschqhosdyyhcjfiripdspkecizerzzbvqhqvsmaqpwmvdeaxdujtxtqvimgcrjmimcacffllmxvxirkcybmobxllbozuogsalynmosoyimrqeluydlsiyvdvzxqdzuwjcybplcdnjkkvnmonykxibmxqchdaxautwvebdyintyncnrbemolgydnghrwopnssyiilpedchlesdvbrwphjzaqslfmbnyhbgyyboayhgqhdmskjgtxqymenjlqcnsnwzcxwxejdlwmphccbhmxtxaxpbguluvlcznfoqozmvvgzncvhezxwcvuhnafklvxfpxrrtaenatndvudckyvlhzzsiaqklxcjiumqtpsymfzaipczpiwywbyouxvvhigwkchykfil

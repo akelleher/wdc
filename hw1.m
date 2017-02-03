@@ -139,7 +139,7 @@ while 1
     end
 end
 disp('Dictionary:')
-disp('Note: Codewords should be padded with leading zeros to be constant length.')
+disp('Note: Codewords should be padded with leading zeros to be constant length of log2 of the dictionary size.')
 disp('Codeword    Message')
 for i = 1:size(dictionary, 1)
     disp([dec2bin(i) '   ' char(dictionary{i})'])
