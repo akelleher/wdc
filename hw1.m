@@ -5,7 +5,7 @@ clear
 %Part 1: generate random letters
 n = 10000;
 letters = char(randi([0,25], n, 1)+'a');
-
+%disp(letters.')
 %Part 2 Huffman:
 frequency = zeros(26,1);
 for i = 1:n
@@ -72,7 +72,8 @@ while 1
 end
 
 %traverse tree back for symbols
-
+disp('Huffman coding:')
+aggregateLength = 0;
 for i = 1:26
     codeWord = [];
     childNode = i;
@@ -80,6 +81,7 @@ for i = 1:26
         parentNode = huffNodes(childNode).parent;
         if parentNode == 0
             disp([huffNodes(i).letter '  ' num2str(probability(i, 2)) '  '  num2str(codeWord)])
+            aggregateLength = aggregateLength + probability(i,2)*size(codeWord, 2);
             break
         else
             if huffNodes(parentNode).leftChild == childNode;
@@ -94,4 +96,51 @@ for i = 1:26
             end
         end
     end
+end
+disp(['Average Length: ' num2str(aggregateLength)])
+
+disp('Lempel-Ziv:')
+pointer = 1;
+maxDictionaryLength = 255;
+wordLength = 1;
+letters = [letters; '#']; %Add terminator
+dictionary = {};
+while 1
+    if strcmp(letters(pointer), '#')
+        %End of message
+        break
+    end
+        
+    %if dictionary is not full, insert new word
+    if size(dictionary, 1) < maxDictionaryLength
+        while 1
+            location = strmatch(letters(pointer:pointer+wordLength-1), dictionary, 'exact');
+            %disp(['looking for ' letters(pointer:pointer+wordLength-1)'])
+            if any(location) && pointer+wordLength < size(letters, 1)
+               %We found it - so look for characters that are one longer
+                wordLength = wordLength + 1;
+            else
+               %append new word to dictionary
+               letters(pointer:pointer+wordLength-1);
+               dictionary = [dictionary; letters(pointer:pointer+wordLength-1)]; 
+               break
+            end
+    
+        end
+        
+        
+            
+        
+    end    
+    
+    pointer = pointer + wordLength;
+    if pointer > size(letters, 1)
+        break
+    end
+end
+disp('Dictionary:')
+disp('Note: Codewords should be padded with leading zeros to be constant length.')
+disp('Codeword    Message')
+for i = 1:size(dictionary, 1)
+    disp([dec2bin(i) '   ' char(dictionary{i})'])
 end
