@@ -73,4 +73,25 @@ end
 
 %traverse tree back for symbols
 
-
+for i = 1:26
+    codeWord = [];
+    childNode = i;
+    while 1
+        parentNode = huffNodes(childNode).parent;
+        if parentNode == 0
+            disp([huffNodes(i).letter '  ' num2str(probability(i, 2)) '  '  num2str(codeWord)])
+            break
+        else
+            if huffNodes(parentNode).leftChild == childNode;
+                codeWord = [0 codeWord];
+                %disp('Traverse left branch')
+                childNode = parentNode;
+            end
+            if huffNodes(parentNode).rightChild == childNode;
+                codeWord = [1 codeWord];
+                %disp('Traverse right branch')
+                childNode = parentNode;
+            end
+        end
+    end
+end

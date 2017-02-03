@@ -15,6 +15,8 @@ classdef node
             self.prob = inProb;
             self.letter = inLetter;
             self.parent = 0;
+            self.leftChild = 0;
+            self.rightChild = 0;
         end
     end
 end
