@@ -2,7 +2,7 @@
 %WDC take-home midterm
 
 %Generate random symbols
-n = 1000000;
+n = 100;
 disp('Generating symbols')
 tic
 symbols = char(randi([0,3], n, 1)+'a');
@@ -21,6 +21,12 @@ toc
 
 disp('Modulating with QPSK')
 tic
-q = modQPSK(hamming);
+mod = modQPSK(hamming);
 toc
 
+disp('Add noise')
+
+disp('Demodulating QPSK')
+tic
+demod = demodQPSK(mod);
+toc
