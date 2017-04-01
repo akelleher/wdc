@@ -6,7 +6,6 @@ function [ output ] = huffman( input )
 n = length(input);
 letters = input;
 %disp(letters.')
-%Part 2 Huffman:
 frequency = zeros(4,1);
 for i = 1:n
     frequency(letters(i)-'a' + 1) = 1 + frequency(letters(i)-'a' + 1);
@@ -74,23 +73,26 @@ end
 %traverse tree back for symbols
 disp('Huffman coding:')
 aggregateLength = 0;
+codeWords = containers.Map;
+
 for i = 1:4
     codeWord = [];
     childNode = i;
     while 1
         parentNode = huffNodes(childNode).parent;
         if parentNode == 0
-            disp([huffNodes(i).letter '  ' num2str(probability(i, 2)) '  '  num2str(codeWord)])
+            disp([huffNodes(i).letter '  ' num2str(probability(i, 2)) '  '  codeWord])
+            codeWords(huffNodes(i).letter) = num2str(codeWord(codeWord~=' ')); %Track letter and codewords, removing spaces
             aggregateLength = aggregateLength + probability(i,2)*size(codeWord, 2);
             break
         else
             if huffNodes(parentNode).leftChild == childNode;
-                codeWord = [0 codeWord];
+                codeWord = ['0' codeWord];
                 %disp('Traverse left branch')
                 childNode = parentNode;
             end
             if huffNodes(parentNode).rightChild == childNode;
-                codeWord = [1 codeWord];
+                codeWord = ['1' codeWord];
                 %disp('Traverse right branch')
                 childNode = parentNode;
             end
@@ -98,6 +100,13 @@ for i = 1:4
     end
 end
 disp(['Average Length: ' num2str(aggregateLength)])
-
+keys(codeWords)
+values(codeWords)
+output = cell(zeros(1,n));
+%Use map to encode output
+for i = 1:n
+    output{i} = codeWords(input(i));
+end
+    output = strcat(output);
 end
 
