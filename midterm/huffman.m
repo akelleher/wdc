@@ -100,13 +100,12 @@ for i = 1:4
     end
 end
 disp(['Average Length: ' num2str(aggregateLength)])
-keys(codeWords)
-values(codeWords)
-output = cell(zeros(1,n));
+
+output = cell(zeros(1,n)); %Cell array allows for codewords of arbitrary length
 %Use map to encode output
 for i = 1:n
-    output{i} = codeWords(input(i));
+    output{i} = codeWords(input(i)); %This is slow - could retool to get rid of map
 end
-    output = strcat(output);
+    output = [output{:}]; %Concatenate cell array elements to single char array
 end
 
