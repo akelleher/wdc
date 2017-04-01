@@ -18,6 +18,6 @@ for i = 1:length(phase)
    end
 end
 output = reshape(output', 1, numel(output)); %Make matrix into a vector
-output = output(1:numel(input)*2) %remove trailing whitespace
+output = output(1:numel(input)*2); %remove trailing whitespace
 end
 

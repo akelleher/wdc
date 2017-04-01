@@ -106,6 +106,7 @@ output = cell(zeros(1,n)); %Cell array allows for codewords of arbitrary length
 for i = 1:n
     output{i} = codeWords(input(i)); %This is slow - could retool to get rid of map
 end
+    disp('still working...')
     output = [output{:}]; %Concatenate cell array elements to single char array
 end
 
