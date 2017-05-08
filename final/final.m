@@ -7,3 +7,8 @@ uncompressedBitstream = reshape(image, 1, []);
 
 %Huffman encode
 huffmanBitstream = huffman(uncompressedBitstream);
+
+%Lempel-Ziv encode
+
+
+%Modulate QPSK

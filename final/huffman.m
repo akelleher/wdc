@@ -100,7 +100,7 @@ for i = 1:256
     end
 end
 disp(['Average Length: ' num2str(aggregateLength)])
-
+disp('Encoding data- takes a while...')
 %Encode data using codewords
 output = blanks(n*ceil(aggregateLength)); % preallocate output matrix
 outputIndex = 1;
@@ -110,15 +110,18 @@ tic
 for i = 1:n
     appendWord = codeWords(inputBytestream(i)+1);
     wordLength = numel(char(appendWord));
-    disp(['appendWord: ' char(appendWord) '   wordLength: ' num2str(wordLength)])
+    %disp(['appendWord: ' char(appendWord) '   wordLength: ' num2str(wordLength)])
     if outputIndex + wordLength > numel(output)
         output = [output blanks(1000)];
-        disp('Buffer overflow!')
+        disp('Buffer overflow! Expanding buffer')
     end
     output(outputIndex:outputIndex+wordLength-1) = char(appendWord);
     outputIndex = outputIndex + wordLength;
 end
 toc
 output(output==' ') = []; %remove extra buffer values
+bitsIn = numel(inputBytestream)*8;
+bitsOut = numel(output);
+disp([ num2str(bitsIn), ' bits in, ', num2str(bitsOut), ' bits out. Compression ratio: ', num2str(bitsOut/bitsIn)])
 end
 
