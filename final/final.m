@@ -2,13 +2,15 @@
 %WDC Final
 
 %Import picture
-image = imread('small.jpg');
-uncompressedBytestream = reshape(image, 1, []);
+imageValues = imread('small.jpg');
+uncompressedBytestream = reshape(imageValues, 1, []);
 
 %Convert bytes to bits. Probably a better way to do this
 uncompressedBitstream = dec2bin(uncompressedBytestream).';
 uncompressedBitstream = uncompressedBitstream(:);
 uncompressedBitstream = uncompressedBitstream.';
+
+showImage(imageValues, uncompressedBitstream)
 
 %Huffman encode
 %huffmanBitstream = huffman(uncompressedBytestream);
