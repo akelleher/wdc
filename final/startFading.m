@@ -1,9 +1,9 @@
 %Alex Kelleher
 %WDC Final
-%Hamming code, m = 3
+%Hamming code, m = 4
 
 %Import picture
-imageValues = imread('DSC_0924.jpg');
+imageValues = imread('medium_small.jpg');
 uncompressedBytestream = reshape(imageValues, 1, []);
 
 %Convert bytes to bits. Probably a better way to do this
@@ -13,30 +13,33 @@ uncompressedBitstream = uncompressedBitstream.';
 
 showImage(imageValues, uncompressedBitstream, 'Original Image')
 
-%Hamming with m=3
+%Hamming with m=4
+hammingBitstream = Hamming4Encode(uncompressedBitstream);
 
 
 disp('Modulating QPSK')
-noiselessQPSK = modQPSK(uncompressedBitstream);
+noiselessQPSK = modQPSK(hammingBitstream);
 
 errorData = [];
 for SNR = -10:10
+    %disp('Creating noise')
+    h = multNoise(numel(noiselessQPSK));
     
-    
-    %disp('Adding noise')
-    noisy = AWGN(noiselessQPSK, SNR);
+    %Model fading and AWGN
+    noisy = AWGN(h.*noiselessQPSK, SNR);
     
     %disp('Demodulating QPSK')
-    demod = demodQPSK(noisy);
-    
+    %h known at receiver
+    demod = demodQPSK(noisy./h);
+    decode = Hamming4Decode(demod);
     %Display images
     if mod(SNR,5) == 0
-        showImage(imageValues, demod, ['Uncoded Transmission, SNR = ' num2str(SNR)])
+        showImage(imageValues, decode, ['Hamming w/ m = 4, SNR = ' num2str(SNR)])
     end
     
     %disp('Error:')
-    errors = nnz(uncompressedBitstream-demod);
-    BER = double(errors)/numel(demod);
+    errors = nnz(uncompressedBitstream-decode);
+    BER = double(errors)/numel(decode);
     errorData = [errorData; SNR BER];
     
     disp(['SNR: ', num2str(SNR), '   BER: ', num2str(BER)]);
