@@ -1,25 +1,20 @@
 %Alex Kelleher
 %WDC Final
+%Uncoded transmission
 
 %Import picture
 imageValues = imread('small.jpg');
-uncompressedBytestream = reshape(imageValues, 1, []);
+imageBytestream = reshape(imageValues, 1, []);
 
 %Convert bytes to bits. Probably a better way to do this
-uncompressedBitstream = dec2bin(uncompressedBytestream).';
-uncompressedBitstream = uncompressedBitstream(:);
-uncompressedBitstream = uncompressedBitstream.';
+imageBitstream = dec2bin(imageBytestream).';
+imageBitstream = imageBitstream(:);
+imageBitstream = imageBitstream.';
 
-showImage(imageValues, uncompressedBitstream, 'Original Image')
-
-%Huffman encode
-%huffmanBitstream = huffman(uncompressedBytestream);
-
-%Lempel-Ziv encode
-
+showImage(imageValues, imageBitstream, 'Original Image')
 
 disp('Modulating QPSK')
-noiselessQPSK = modQPSK(uncompressedBitstream);
+noiselessQPSK = modQPSK(imageBitstream);
 
 errorData = [];
 for SNR = -10:10
@@ -35,7 +30,7 @@ for SNR = -10:10
     end
     
     %disp('Error:')
-    errors = nnz(uncompressedBitstream-demod);
+    errors = nnz(imageBitstream-demod);
     BER = double(errors)/numel(demod);
     errorData = [errorData; SNR BER];
     
