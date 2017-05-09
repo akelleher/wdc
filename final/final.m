@@ -10,7 +10,7 @@ uncompressedBitstream = dec2bin(uncompressedBytestream).';
 uncompressedBitstream = uncompressedBitstream(:);
 uncompressedBitstream = uncompressedBitstream.';
 
-showImage(imageValues, uncompressedBitstream)
+showImage(imageValues, uncompressedBitstream, 'Original Image')
 
 %Huffman encode
 %huffmanBitstream = huffman(uncompressedBytestream);
@@ -28,7 +28,12 @@ for SNR = -10:10
     
     %disp('Demodulating QPSK')
     demod = demodQPSK(noisy);
-
+    
+    %Display images
+    if mod(SNR,5) == 0
+        showImage(imageValues, demod, ['Uncoded Transmission, SNR = ' num2str(SNR)])
+    end
+    
     %disp('Error:')
     errors = nnz(uncompressedBitstream-demod);
     BER = double(errors)/numel(demod);
@@ -36,6 +41,7 @@ for SNR = -10:10
     
     disp(['SNR: ', num2str(SNR), '   BER: ', num2str(BER)]);
 end
+figure
 plot(errorData(:,1), errorData(:,2))
 title('Uncoded Transmission')
 xlabel('SNR')
